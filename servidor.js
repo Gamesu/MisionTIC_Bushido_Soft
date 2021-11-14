@@ -10,6 +10,9 @@ const router = express.Router(); // ruta para dar puerta de entrada al usuario a
 const app = express(); // instancia de express para poder inicializar el servidor app es mi servidor, expres es el costructor a o clase
 const conexion = require('./models/conexion');// conexion a BD
 
+const path = require('path');
+const fs = require('fs');
+
 //---------------Importe de Entidades---------------------------//
 const usuarioSchema = require('./models/usuario.js');
 const ubicacionSchema = require('./models/ubicacion.js');
@@ -19,10 +22,21 @@ const inmuebleSchema = require('./models/inmueble.js');
 app.use(express.urlencoded({extended: true}));// Usar codificacion de URL que trae express y de manera extendida
 app.use(express.json());// permitir que nos ingrese informacion en formato json
 
+router.get('/main.js', (req, res) => {
+    //res.send("El inicio de mi API   Index login");
+    //res.sendFile(path.join(__dirname +'/index.html'));
+    res.writeHead(200, {'Content-Type': 'javascript:;'});
+    // Se envía el archivo html al server mediante un response
+    fs.createReadStream('./public/main.js').pipe(res);
+});
 
 /***********Operaciones CRUD ***************/
 router.get('/', (req, res) => {
-    res.send("El inicio de mi API   Index login");
+    //res.send("El inicio de mi API   Index login");
+    //res.sendFile(path.join(__dirname +'/index.html'));
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    // Se envía el archivo html al server mediante un response
+    fs.createReadStream('./index.html').pipe(res);
 });
 
 router.get('/ubicacion', (req, res) =>{
@@ -37,7 +51,7 @@ router.get('/ubicacion', (req, res) =>{
 
 router.post('/ubicacion', (req, res) =>{
     let nuevaUbicacion = new ubicacionSchema({
-        idUbicacion: req.body.id,
+        idUbicacion: req.body.idUbicacion,
         departamento:req.body.departamento,
         ciudad: req.body.ciudad,
         barrio: req.body.barrio,

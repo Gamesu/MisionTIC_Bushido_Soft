@@ -42,9 +42,9 @@ router.get('/', (req, res) => {
 router.get('/ubicacion', (req, res) =>{
     ubicacionSchema.find(function(err, datos) {
         if (err) {
-            console.log("Error leyendo los datos" + err);
+            console.log("Error leyendo los datos");
         }else{
-            res,send(datos);
+            res.send(datos);
         }
     });
 });

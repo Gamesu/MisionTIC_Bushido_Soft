@@ -12,9 +12,19 @@ ngApp.controller('myController', function ($scope, $http) {
             // $scope.formData = {};
             $scope.todos = response.data;
             console.log(response);
-            })
+            });
             //   alert($scope.tel+" "+$scope.cedula)
-        };
+    };
+    $scope.ListTodo = function () {
+        $http
+        .get("http://localhost:3000/ubicacion", $scope.formData)
+        .then(function successCallback(response){
+            // $scope.formData = {};
+            $scope.Lista = response.data;
+            console.log(response);
+            });
+            //   alert($scope.tel+" "+$scope.cedula)
+    };
 });
 
 

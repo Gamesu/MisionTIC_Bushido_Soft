@@ -27,9 +27,11 @@
                 <label for="valor">Direccion</label><br>
                 <input type="text" class="form-control input-lg text-center" placeholder="Inserta Direccion" id="direccion" ng-model="formData.direccion"><br>
                 <label for="valor">Estrato</label><br>
-                <input type="text" class="form-control input-lg text-center" placeholder="Inserta Estrato" id="estrato" ng-model="formData.estrato">
+                <input type="text" class="form-control input-lg text-center" placeholder="Inserta Estrato" id="estrato" ng-model="formData.estrato"><br>
             </div>
-            <button class="btn btn-primary btn-lg" ng-click="createTodo()">Añadir</button>
+            <button class="btn btn-primary btn-lg" ng-click="createTodo()">Añadir</button><br>
+            <button class="btn btn-primary btn-lg" ng-click="ListTodo()">Listar</button><br>
+            {{Lista}}
          </form>
 </body>
 </html>

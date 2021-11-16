@@ -1,0 +1,23 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "project cicle 4",
+  "main": "servidor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gamesu/MisionTIC_Bushido_Soft.git"
+  },
+  "author": "Ldloaizae",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gamesu/MisionTIC_Bushido_Soft/issues"
+  },
+  "homepage": "https://github.com/Gamesu/MisionTIC_Bushido_Soft#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12"
+  }
+}

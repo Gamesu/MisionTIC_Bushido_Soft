@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" id="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="./mainInmueble.js"></script>
+</head>
+<body ng-controller="ControllerInmueble">
+    
+    {{msg}}
+         <a href="javascript:;" id="lbtnTest"> Llamar </a>
+         <h1>Formulario de Nuevo Inmueble</h1>
+         <form>
+            {{todos}}
+            <div class="form-group">
+                <label for="valor">Id Inmueble</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Inserta Id de Inmueble" id="idInmueble" ng-model="formData.idInmueble"><br>
+                <label for="valor">Tipo de Inmueble</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Insertar Tipó de Inmueble" id="tipo" ng-model="formData.tipo"><br>
+                <label for="valor">Descripcion del Inmueble</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Insertar la descripcion" id="descripcion" ng-model="formData.descripcion"><br>
+                <label for="valor">Numero de Habitaciones</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Insertar numero de habitaciones" id="habitaciones" ng-model="formData.habitaciones"><br>
+                <label for="valor">Numero de banos</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Insertar numero de banos" id="banos" ng-model="formData.banos"><br>
+                <label for="valor">Precio</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Insertar Precio" id="precio" ng-model="formData.precio"><br>
+                <label for="valor">Imagen</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Insertar imagen" id="imagen" ng-model="formData.imagen"><br>
+                <label for="valor">Ubicacion</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Insertar ubicacion" id="ubicacion" ng-model="formData.ubicacion"><br>
+            </div>
+            <button class="btn btn-primary btn-lg" ng-click="createTodo()">Añadir</button><br>
+            <button class="btn btn-primary btn-lg" ng-click="ListTodo()">Listar</button><br>
+            {{Lista}}
+         </form>
+</body>
+</html>
+
+  

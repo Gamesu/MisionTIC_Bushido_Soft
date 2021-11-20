@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
+const ObjectId = require('mongodb').ObjectID;
 const inmuebleSchema = new mongoose.Schema({
-    idInmueble: {
-        type: Number
-    },
     tipo: {
         type: String
     },
@@ -21,9 +19,9 @@ const inmuebleSchema = new mongoose.Schema({
     imagen: {
         type: String
     },
-    idUbicacion: {
-        type: String
+    id_ubicacion: {
+        type: ObjectId
     }
 });
 
-module.exports = mongoose.model('inmueble', inmuebleSchema, 'Inmuebles');
+module.exports = mongoose.model('inmueble', inmuebleSchema, 'inmuebles');

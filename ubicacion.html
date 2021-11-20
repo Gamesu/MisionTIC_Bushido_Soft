@@ -1,0 +1,36 @@
+<html ng-app="myApp" id="myApp">
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <meta charset="UTF-8">
+        <title>Test</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="./main.js"></script>
+    </head>
+
+    <header>
+        <h1>Formulario de datos</h1>
+    </header>
+
+    <body ng-controller="myController">
+     {{msg}}
+           <a href="javascript:;" id="lbtnTest"> Llamar </a>
+           <form>
+               {{todos}}
+                <div class="form-group">
+                    <label for="valor">Departamento</label><br>
+                    <input type="text" class="form-control input-lg text-center" placeholder="Inserte el departamento" id="departamento" ng-model="formData.departamento"><br>
+                    <label for="valor">Ciudad</label><br>
+                    <input type="text" class="form-control input-lg text-center" placeholder="Inserta la ciudad" ng-model="formData.ciudad"><br>
+                    <label for="valor">Barrio</label><br>
+                    <input type="text" class="form-control input-lg text-center" placeholder="Inserta el barrio" ng-model="formData.barrio"><br>
+                    <label for="valor">Direccion</label><br>
+                    <input type="text" class="form-control input-lg text-center" placeholder="Inserta la direccion" ng-model="formData.direccion"><br>
+                    <label for="valor">Estrato</label><br>
+                    <input type="text" class="form-control input-lg text-center" placeholder="Inserta el estrato" ng-model="formData.estrato"><br>
+                </div>
+                    <button class="btn btn-primary btn-lg" ng-click="createUbicacion()">Crear</button>
+            </form>
+    </body>
+
+
+</html>

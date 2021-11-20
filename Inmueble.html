@@ -1,0 +1,40 @@
+<html ng-app="myApp" id="myApp">
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <meta charset="UTF-8">
+        <title>Test</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="./main.js"></script>
+    </head>
+
+    <header>
+        <h1>Formulario de datos</h1>
+    </header>
+
+    <body ng-controller="myController">
+     
+           
+           <form>
+               {{todos}}
+                <div class="form-group">
+                    <label for="valor">Tipo</label><br>
+                    <input type="text" class="form-control input-lg text-center" placeholder="Inserte el tipo" id="tipo" ng-model="formData.tipo"><br>
+                    <label for="valor">Descripcion</label><br>
+                    <input type="text" class="form-control input-lg text-center" placeholder="Inserta la descripcion" ng-model="formData.descripcion"><br>
+                    <label for="valor">Numero de habitaciones</label><br>
+                    <input type="text" class="form-control input-lg text-center" placeholder="Inserta el numero de habitaciones" ng-model="formData.numeroHabitaciones"><br>
+                    <label for="valor">Numero de baños</label><br>
+                    <input type="text" class="form-control input-lg text-center" placeholder="Inserta el numero de banos" ng-model="formData.numeroBanos"><br>
+                    <label for="valor">Precio</label><br>
+                    <input type="text" class="form-control input-lg text-center" placeholder="Inserta el precio" ng-model="formData.precio"><br>
+                    <label for="valor">Imagenes</label><br>
+                    <input type="text" class="form-control input-lg text-center" placeholder="Inserta las imagenes" ng-model="formData.imagenes"><br>
+                    <label for="valor">Ubicacion</label><br>
+                    <input type="text" class="form-control input-lg text-center" placeholder="Campo generado automaticamente" ng-model="formData.ubicacion" readonly><br>
+                </div>
+                    <button class="btn btn-primary btn-lg" ng-click="createInmueble()">Crear</button>
+            </form>
+    </body>
+
+
+</html>

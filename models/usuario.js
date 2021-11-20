@@ -1,8 +1,5 @@
 const mongoose = require('mongoose'); // importar paquete mongoose
 const usuarioSchema = new mongoose.Schema({
-    idUsuario: {
-        type: Number
-    },
     nombres: {
         type: String
     },
@@ -20,4 +17,4 @@ const usuarioSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('usuario', usuarioSchema, 'Usuarios');// exportar estructura al exterior
+module.exports = mongoose.model('usuario', usuarioSchema, 'usuarios');// exportar estructura al exterior

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" id="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="./mainUbicacion.js"></script>
+</head>
+<body ng-controller="myController">
+    
+    {{msg}}
+         <a href="javascript:;" id="lbtnTest"> Llamar </a>
+         <h1>Formulario de Nueva ubicacion</h1>
+         <form>
+            {{todos}}
+            <div class="form-group">
+                <label for="valor">Id Ubicacion</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Inserta Id de Ubicacion" id="idUbicacion" ng-model="formData.idUbicacion"><br>
+                <label for="valor">Departamento</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Inserta Departamento" id="departamento" ng-model="formData.departamento"><br>
+                <label for="valor">Ciudad</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Inserta Ciudad" id="ciudad" ng-model="formData.ciudad"><br>
+                <label for="valor">Barrio</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Inserta Barrio" id="barrio" ng-model="formData.barrio"><br>
+                <label for="valor">Direccion</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Inserta Direccion" id="direccion" ng-model="formData.direccion"><br>
+                <label for="valor">Estrato</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Inserta Estrato" id="estrato" ng-model="formData.estrato"><br>
+            </div>
+            <button class="btn btn-primary btn-lg" ng-click="createTodo()">Añadir</button><br>
+            <button class="btn btn-primary btn-lg" ng-click="ListTodo()">Listar</button><br>
+            {{Lista}}
+         </form>
+</body>
+</html>
+
+  

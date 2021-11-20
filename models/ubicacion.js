@@ -1,8 +1,5 @@
 const mongoose = require('mongoose');
 const ubicacionSchema = new mongoose.Schema({
-    idUbicacion: {
-        type: Number
-    },
     departamento: {
         type: String
     },
@@ -20,4 +17,4 @@ const ubicacionSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('ubicacion', ubicacionSchema, 'Ubicaciones');
+module.exports = mongoose.model('ubicacion', ubicacionSchema, 'ubicaciones');

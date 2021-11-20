@@ -2,7 +2,7 @@ var ngApp = angular.module('myApp', []);
   
  ngApp.controller('myController', function ($scope, $http) {
 
-    $scope.msg = '¡Hola, angular como estan! ';
+    //$scope.msg = '¡Hola, angular como estan! ';
 
     $scope.getData = function () {
                    return 'qubernet';
@@ -15,13 +15,29 @@ var ngApp = angular.module('myApp', []);
                       $scope.todos = response.data;
                       console.log(response);
                     })
-                   
-                //   alert($scope.tel+" "+$scope.cedula)
+                  };
+                  $scope.createUbicacion = function () {
+                    $http
+                    .post("http://localhost:600/crearUbicacion", $scope.formData)
+                    .then(function successCallback(response)  {
+                     // $scope.formData = {};
+                      $scope.todos = response.data;
+                      console.log(response);
+                    })
+                  };
+                  $scope.createInmueble = function () {
+                    $http
+                    .post("http://localhost:600/crearInmueble", $scope.formData)
+                    .then(function successCallback(response)  {
+                     // $scope.formData = {};
+                      $scope.todos = response.data;
+                      console.log(response);
+                    })
                   };
  })
 
 
- onload = function () {
+ /*onload = function () {
              document.getElementById('lbtnTest').onclick = function () {
                  alert("hola")
       // Obtenga la aplicación Angular a través del controlador
@@ -36,4 +52,4 @@ var ngApp = angular.module('myApp', []);
       // Llame al método getData () en el controlador
              console.log($scope.getData());
               }
-        }
+        }*/

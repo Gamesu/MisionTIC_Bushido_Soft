@@ -1,6 +1,9 @@
 const express= require("express");
 const {createReadStream} = require('fs')
-var modelo= require('./usuario')
+
+var modelo = require('./usuario')
+var modeloUbicacion = require('./ubicacion')
+var modeloInmueble = require('./inmueble')
 
 
 
@@ -31,11 +34,31 @@ app.post("/upload", (req, res) => {
 })
 
 
+app.post("/crearUbicacion", (req, res) => {
+  var myobj = {departamento: req.body.departamento, ciudad: req.body.ciudad, barrio: req.body.barrio, direccion: req.body.direccion, estrato: req.body.estrato};
+  modeloUbicacion.collection.insertOne(myobj, function(err, res) {
+  if (err) throw err;
+})
+  res.send("Datos insertados correctamente")
+})
+
+
+app.post("/crearInmueble", (req, res) => {
+  modeloUbicacion.find({barrio:'pinares'}, (err, docs) => {
+    var myobj = { tipo: req.body.tipo, descripcion: req.body.descripcion, numeroHabitaciones: req.body.numeroHabitaciones, numeroBanos: req.body.numeroBanos, precio: req.body.precio, imagenes: req.body.imagenes, ubicacion: docs[0]._id};
+    modeloInmueble.collection.insertOne(myobj, function(err, res) {
+    if (err) throw err;
+  })
+    console.log(docs[0]._id)
+  })
+})
+
+
 app.get('/', (req, res) => {
   res.writeHead(200, { 'Content-Type': HTML_CONTENT_TYPE })
  
 
-  createReadStream('./index.html').pipe(res)
+  createReadStream('./inmueble.html').pipe(res)
    
   })
 

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const ObjectId = require('mongodb').ObjectID;
 const inmuebleSchema = new mongoose.Schema({
     tipo: {
         type: String
@@ -19,7 +20,7 @@ const inmuebleSchema = new mongoose.Schema({
         type: String
     },
     id_ubicacion: {
-        type: moongose.Schema.ObjectId, ref: "ubicacion"
+        type: ObjectId
     }
 });
 

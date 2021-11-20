@@ -25,6 +25,27 @@ ngApp.controller('myController', function ($scope, $http) {
             });
             //   alert($scope.tel+" "+$scope.cedula)
     };
+    $scope.sumar = function () {
+        num1 = $scope.formData.num1;
+        num1 = parseInt(num1, 10);
+        num2 = $scope.formData.num2;
+        num2 = parseInt(num2, 10);
+        resultado= num1 + num2;
+        $scope.resultado = resultado;
+                
+            //   alert($scope.tel+" "+$scope.cedula)
+    };
+    $scope.multi = function () {
+        $http
+        .post("http://localhost:3000/multi", $scope.formData)
+        .then(function successCallback(response){
+            // $scope.formData = {};
+            $scope.resultado = response.data;
+            console.log(response);
+            });
+                
+            //   alert($scope.tel+" "+$scope.cedula)
+    };
 });
 
 

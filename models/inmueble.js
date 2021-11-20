@@ -1,3 +1,4 @@
+const { ObjectId } = require("bson");
 const mongoose = require('mongoose');
 const inmuebleSchema = new mongoose.Schema({
     idInmueble: {
@@ -22,7 +23,7 @@ const inmuebleSchema = new mongoose.Schema({
         type: String
     },
     idUbicacion: {
-        type: String
+        type: ObjectId
     }
 });
 

@@ -1,5 +1,5 @@
 ﻿# MisionTIC_Bushido_Soft 
- Grupo Número 11,
+ Grupo Número 40,
  Nombre de equipo:Bushido_Soft,
  Integrantes y roles:
  Lider Oscar Estrada

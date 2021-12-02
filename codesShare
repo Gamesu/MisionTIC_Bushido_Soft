@@ -1,38 +1,3 @@
-index.html
-
-
-<html ng-app="myApp" id="myApp">
- <head>
-     <meta name="viewport" content="width=device-width" />
-    <title>Test</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <script src="./main.js"></script>
-
-</head>
- <body ng-controller="myController">
-     {{msg}}
-           <a href="javascript:;" id="lbtnTest"> Llamar </a>
-
-
-
-           <form>
-               {{todos}}
-            <div class="form-group">
-                <label for="valor">Cedula</label><br>
-                <input type="text" class="form-control input-lg text-center" placeholder="Inserta la cedula" id="cedula" ng-model="formData.cedula">
-                <label for="valor">tel</label><br>
-                <input type="text" class="form-control input-lg text-center" placeholder="Inserta el tel" ng-model="formData.tel">
-           
-            
-            </div>
-            <button class="btn btn-primary btn-lg" ng-click="createTodo()">Añadir</button>
-        </form>
- </body>
- </html>
- 
- 
- 
- 
  
  main.js
  

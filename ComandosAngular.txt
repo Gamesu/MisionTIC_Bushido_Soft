@@ -1,0 +1,6 @@
+ ng new myProjectAngular
+ ng serve -o      /// Lanza aplicacion de frontend
+ "Ubicacion proyecto" ng generate component NameOfComponent
+ "Ubicacion proyecto" ng generate service NameOfComponent
+ 
+ http://localhost:4200/

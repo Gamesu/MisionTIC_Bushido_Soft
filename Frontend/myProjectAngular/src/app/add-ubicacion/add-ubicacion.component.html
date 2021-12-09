@@ -4,31 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <script src="./mainUbicacion.js"></script>
+    <title>Create Ubicacion</title>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>-->
+    <!--<script src="./mainUbicacion.js"></script>-->
 </head>
 <body ng-controller="myController">
-    
-         <a href="javascript:;" id="lbtnTest"> Llamar </a>
+    {{msg}}
          <h1>Formulario de Nueva ubicacion</h1>
          <form>
+            {{todos}}<br> <br> <br>
             <div class="form-group">
                 <label for="valor">Id Ubicacion</label><br>
-                <input type="text" class="form-control input-lg text-center" placeholder="Inserta Id de Ubicacion" id="idUbicacion" ng-model="formData.idUbicacion"><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Inserta Id de Ubicacion" id="idUbicacion" [(ngModel)]="formData.idUbicacion" [ngModelOptions]="{standalone: true}" required><br>
                 <label for="valor">Departamento</label><br>
-                <input type="text" class="form-control input-lg text-center" placeholder="Inserta Departamento" id="departamento" ng-model="formData.departamento"><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Inserta Departamento" id="departamento" [(ngModel)]="formData.departamento" [ngModelOptions]="{standalone: true}"><br>
                 <label for="valor">Ciudad</label><br>
-                <input type="text" class="form-control input-lg text-center" placeholder="Inserta Ciudad" id="ciudad" ng-model="formData.ciudad"><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Inserta Ciudad" id="ciudad" [(ngModel)]="formData.ciudad" [ngModelOptions]="{standalone: true}"><br>
                 <label for="valor">Barrio</label><br>
-                <input type="text" class="form-control input-lg text-center" placeholder="Inserta Barrio" id="barrio" ng-model="formData.barrio"><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Inserta Barrio" id="barrio" [(ngModel)]="formData.barrio" [ngModelOptions]="{standalone: true}"><br>
                 <label for="valor">Direccion</label><br>
-                <input type="text" class="form-control input-lg text-center" placeholder="Inserta Direccion" id="direccion" ng-model="formData.direccion"><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Inserta Direccion" id="direccion" [(ngModel)]="formData.direccion" [ngModelOptions]="{standalone: true}"><br>
                 <label for="valor">Estrato</label><br>
-                <input type="text" class="form-control input-lg text-center" placeholder="Inserta Estrato" id="estrato" ng-model="formData.estrato"><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Inserta Estrato" id="estrato" [(ngModel)]="formData.estrato" [ngModelOptions]="{standalone: true}"><br>
             </div>
-            <button class="btn btn-primary btn-lg" ng-click="createTodo()">Añadir</button><br>
+            <button class="btn btn-primary btn-lg" (click)="createTodo()">Añadir</button><br>
             <button class="btn btn-primary btn-lg" ng-click="ListTodo()">Listar</button><br>
-         </form>
+            {{Lista}}
+         </form><!--*ngFor="let item of items" (click)="open($event, item)"-->
 </body>
 </html>

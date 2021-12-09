@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RegistrarService } from "../registrar.service";
+import { FormsModule } from "@angular/forms";
 
 @Component({
   selector: 'app-add-ubicacion',
@@ -6,13 +8,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-ubicacion.component.css']
 })
 export class AddUbicacionComponent implements OnInit {
-
-  constructor() { }
+    todos: any;
+    msg : any;
+    Lista: any;
+    formData={
+        idUbicacion:0 ,
+        departamento:"",
+        ciudad:"",
+        barrio:"",
+        direccion:"",
+        estrato:0
+      }
+    
+  constructor(private servicio: RegistrarService, ) { }
 
   ngOnInit(): void {
+      //this.createTodo();
+      this.msg = "Mensaje para daniel";
+      this.todos = "Campo Todos";
+
   }
 
+    public createTodo(){
+        console.log("Llamado funcion creacion de ubicacion");
+        console.log(this.formData);
+        this.Lista = "Hola";
+        this.servicio.createTodo(this.formData);
+        //this.Lista = this.formData.barrio;
+        //alert(this.Lista);
+    }
 }
+
 
 /*
 var ngApp = angular.module('myApp', []);

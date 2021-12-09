@@ -13,6 +13,7 @@ export class ConsultarApartamentoComponent implements OnInit {
   tipo:any;
   Apartamentos:any;
   ngOnInit(): void {
+    console.log("Carga pagina de consulta de apartamento");
     this.nombre = "Daniel";
     this.tipo = "Ingeniero";
     this.servicio.getApartamentos().subscribe(data=>{
